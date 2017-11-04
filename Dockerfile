@@ -5,7 +5,8 @@ ENV JENKINS_SWARM_VERSION=3.6 \
 
 USER root
 
-RUN curl -o /usr/share/jenkins/swarm-client.jar -SL https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION.jar \
+RUN apk upgrade --update && apk add --update --no-cache curl \
+ && curl --create-dirs -sSLo /usr/share/jenkins/swarm-client.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION.jar \
  && chmod 644 /usr/share/jenkins/swarm-client.jar \
  && echo "$MD5  /usr/share/jenkins/swarm-client.jar" | md5sum -c -
 
