@@ -9,9 +9,11 @@ RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client.jar https://repo.je
  && chmod 644 /usr/share/jenkins/swarm-client.jar \
  && echo "$MD5  /usr/share/jenkins/swarm-client.jar" | md5sum -c -
 
-USER jenkins
-
 COPY entrypoint.sh /
+
+RUN chmod a+x /entrypoint.sh
+
+USER jenkins
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["java", "-jar", "/bin/swarm-client.jar"]
