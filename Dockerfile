@@ -5,6 +5,8 @@ ENV JENKINS_SWARM_VERSION=3.6 \
 
 USER root
 
+RUN apt-get update
+
 RUN apt-get install \
      apt-transport-https \
      ca-certificates \
