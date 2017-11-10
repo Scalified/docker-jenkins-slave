@@ -5,16 +5,18 @@ ENV JENKINS_SWARM_VERSION=3.6 \
 
 USER root
 
-RUN echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" >> /etc/apt/sources.list
-
-RUN apt-get update
-
 RUN apt-get install \
      apt-transport-https \
      ca-certificates \
      curl \
      gnupg2 \
      software-properties-common
+     
+RUN echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" >> /etc/apt/sources.list
+
+RUN apt-get update
+
+RUN apt-get install docker-ce
 
 RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION.jar \
  && chmod 644 /usr/share/jenkins/swarm-client.jar \
