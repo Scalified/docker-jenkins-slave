@@ -7,7 +7,7 @@ USER root
 
 RUN apt-get update
 
-RUN apt-get install \
+RUN apt-get -y install \
      apt-transport-https \
      ca-certificates \
      curl \
@@ -18,7 +18,7 @@ RUN echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stab
 
 RUN apt-get update
 
-RUN apt-get install docker-ce
+RUN apt-get -y install docker-ce
 
 RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION.jar \
  && chmod 644 /usr/share/jenkins/swarm-client.jar \
