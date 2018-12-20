@@ -24,7 +24,6 @@ This repository is used for building a [**Docker**](https://www.docker.com) imag
 * **JENKINS_TUNNEL**: (HOST:PORT) connect to this agent host and port instead of Jenkins server, assuming this one do route TCP traffic to Jenkins master. Useful when when Jenkins runs behind a load balancer, reverse proxy, etc.
 * **JENKINS_SECRET**: agent secret
 * **JENKINS_AGENT_NAME**: agent name
-* **JENKINS_AGENT_WORKDIR**: agent work directory (directory with the same path must be present, accessible and mounted from host machine)
 
 ## Mandatory Volume Mounts
 
