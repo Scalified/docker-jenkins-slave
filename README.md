@@ -1,4 +1,4 @@
-# Jenkins Slave Alpine Docker 
+# Jenkins Slave Docker
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/scalified/jenkins-slave.svg)](https://hub.docker.com/r/scalified/jenkins-slave)
 [![](https://images.microbadger.com/badges/image/scalified/jenkins-slave.svg)](https://microbadger.com/images/scalified/jenkins-slave)
@@ -18,7 +18,6 @@ This repository is used for building a [**Docker**](https://www.docker.com) imag
 |--------------------------------|-----------|
 | **alpine, latest**             | 3.27.1    |
 
-
 ## Mandatory Environment Variables
 
 * **JENKINS_URL**: url for the Jenkins server
@@ -30,7 +29,7 @@ This repository is used for building a [**Docker**](https://www.docker.com) imag
 ## Mandatory Volume Mounts
 
 * **/var/run/docker.sock**:**/var/run/docker.sock** - docker engine
-* **$JENKINS_AGENT_WORKDIR**:**$JENKINS_AGENT_WORKDIR** - agent working directory (path must be the same on host machine and agent container)
+* **/var/jenkins**:**/var/jenkins** - agent working directory (path must be the same on host machine and agent container)
 
 ### How-To
 
@@ -40,7 +39,16 @@ This repository is used for building a [**Docker**](https://www.docker.com) imag
 
 #### Running Jenkins Slave Docker Image
 
-`docker run scalified/jenkins-slave<tag> -e JENKINS_URL=<...> -e JENKINS_SECRET=<...> -e JENKINS_AGENT_NAME=<...> -e JENKINS_AGENT_WORKDIR=<...> -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins:/var/jenkins -name slave`
+```
+docker run scalified/jenkins-slave<tag> \
+	-e JENKINS_URL=<...> \
+	-e JENKINS_SECRET=<...> \
+	-e JENKINS_AGENT_NAME=<...> \
+	-e JENKINS_AGENT_WORKDIR=<...> \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+	-v /var/jenkins:/var/jenkins \
+	-name slave
+```
 
 ## Scalified Links
 
