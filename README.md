@@ -7,9 +7,9 @@ This image is generic, thus you can re-use it within your own projects.
 
 ## Supported tags and respective Dockerfile links
 
-- [`:latest`  (*Dockerfile*)](https://github.com/Scalified/docker-jenkins-slave/blob/master/Dockerfile)
+- [`:latest`  (*Dockerfile*)](https://github.com/Scalified/jenkins-slave/blob/master/Dockerfile)
 
-See [older versions](https://github.com/Scalified/docker-jenkins-slave/releases)
+See [older versions](https://github.com/Scalified/jenkins-slave/releases)
 
 ## Base docker image
 
@@ -17,7 +17,7 @@ See [older versions](https://github.com/Scalified/docker-jenkins-slave/releases)
 
 ## Source code
 
-- [github.com](https://github.com/Scalified/docker-jenkins-slave)
+- [github.com](https://github.com/Scalified/jenkins-slave)
 
 ## Installation
 
@@ -26,22 +26,22 @@ See [older versions](https://github.com/Scalified/docker-jenkins-slave/releases)
 
 ## Usage
 
-    $ docker run scalified/docker-jenkins-slave
+    $ docker run scalified/jenkins-slave:deprecated-alpine
 
 
 ## Advanced usage
 
 Add user and password to connect jenkins slaves to jenkins master
 
-    $ docker run scalified/docker-jenkins-slave -username foo -password secret
+    $ docker run scalified/jenkins-slave:deprecated-alpine -username foo -password secret
 
 or via environment variables:
 
-    $ docker run -e JENKINS_USER=foo -e JENKINS_PASS=secret scalified/docker-jenkins-slave
+    $ docker run -e JENKINS_USER=foo -e JENKINS_PASS=secret scalified/jenkins-slave:deprecated-alpine
 
 See `--help` for more options:
 
-    $ docker run --rm scalified/docker-jenkins-slave --help
+    $ docker run --rm scalified/jenkins-slave:deprecated-alpine --help
 
 ## Supported environment variables
 
