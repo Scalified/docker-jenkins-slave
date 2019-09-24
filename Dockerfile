@@ -30,7 +30,5 @@ COPY entrypoint.sh /
 
 RUN chmod a+x /entrypoint.sh
 
-USER jenkins
-
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["java", "-jar", "/bin/swarm-client.jar"]
