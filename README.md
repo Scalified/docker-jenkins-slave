@@ -14,9 +14,10 @@ This repository is used for building a [**Docker**](https://www.docker.com) imag
 
 ## Version
 
-| Version                        | Jenkins   |
-|--------------------------------|-----------|
-| **alpine, latest**             | 3.27.1    |
+| Version                            | Jenkins   |
+|------------------------------------|-----------|
+| **alpine, alpine-3.35, latest**    | 3.35      |
+| **alpine-3.27.1**                  | 3.27.1    |
 
 ## Mandatory Environment Variables
 
