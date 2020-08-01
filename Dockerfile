@@ -6,5 +6,5 @@ USER root
 
 RUN apk update \
 	&& apk upgrade \
-	&& apk add docker
+	&& apk add curl docker
 
