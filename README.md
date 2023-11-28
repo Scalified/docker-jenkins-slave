@@ -36,6 +36,10 @@ This repository is used for building a [**Docker**](https://www.docker.com) imag
 
 `docker build . -t scalified/jenkins-slave:<tag>`
 
+#### Pushing Jenkins Slave Docker Image
+
+`docker push scalified/jenkins-slave:<tag>`
+
 #### Running Jenkins Slave Docker Image
 
 ```
