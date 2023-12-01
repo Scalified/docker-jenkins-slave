@@ -6,7 +6,7 @@
 
 ## Description
 
-This repository is used for building a [**Docker**](https://www.docker.com) image containing [**Jenkins JNLP Slave**](https://hub.docker.com/r/jenkins/jnlp-slave/) running on [**Alpine Linux**](https://alpinelinux.org/)
+This repository is used for building a [**Docker**](https://www.docker.com) image containing [**Jenkins Inbound Agent**](https://hub.docker.com/r/jenkins/inbound-agent) running on [**Alpine Linux**](https://alpinelinux.org/)
 
 ## Dockerhub
 
@@ -43,14 +43,14 @@ This repository is used for building a [**Docker**](https://www.docker.com) imag
 #### Running Jenkins Slave Docker Image
 
 ```
-docker run scalified/jenkins-slave<tag> \
-	-e JENKINS_URL=<...> \
-	-e JENKINS_SECRET=<...> \
-	-e JENKINS_AGENT_NAME=<...> \
-	-e JENKINS_AGENT_WORKDIR=<...> \
-	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v /var/jenkins:/var/jenkins \
-	-name slave
+docker run -name jenkins-slave \
+  -e JENKINS_URL=<...> \
+  -e JENKINS_SECRET=<...> \
+  -e JENKINS_AGENT_NAME=<...> \
+  -e JENKINS_AGENT_WORKDIR=<...> \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /var/jenkins:/var/jenkins \
+  scalified/jenkins-slave:<tag>
 ```
 
 ## Scalified Links

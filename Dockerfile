@@ -1,4 +1,4 @@
-FROM jenkins/jnlp-slave:alpine
+FROM jenkins/inbound-agent:alpine-jdk11
 
 ENV JENKINS_AGENT_WORKDIR /var/jenkins
 
