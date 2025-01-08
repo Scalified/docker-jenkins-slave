@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent:alpine-jdk11
+FROM jenkins/inbound-agent:alpine-jdk21
 
 ENV JENKINS_AGENT_WORKDIR /var/jenkins
 
